@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - NepPath VTC</title>
   <link rel="stylesheet" href="css/contactUS.css">
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("aFuQpbbTxM16DSiQr"); // Replace with your EmailJS public key
-    })();
-  </script>
   <style> 
     .contact-section {
       background: url('Ico/temporary.png') no-repeat center center fixed;
@@ -66,7 +60,12 @@
       <div id="contactAlert" class="alert">✅ Message sent successfully!</div>
     </div>
   </section>
-
-  <script src="js/contact.js"></script>
+ <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("aFuQpbbTxM16DSiQr"); // Replace with your EmailJS public key
+    })();
+  </script>
+  <script src="js/contactUS.js"></script>
 </body>
 </html>
