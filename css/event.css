@@ -5,7 +5,7 @@
   font-family: 'Segoe UI', sans-serif;
 }
 body {
-  background: url('/Ico/temporary.png') no-repeat center center fixed;
+  background: url('Ico/temporary.png') no-repeat center center fixed;
   color: white;
   font-size: 16px;
 }
