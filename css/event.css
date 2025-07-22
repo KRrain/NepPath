@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  background: url('/Ico/temporary.png') no-repeat center center fixed;
+  color: white;
+  font-size: 16px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff5a20;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ff5a20;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px;
+  border-radius: 2px;
+}
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero-content h1 {
+  font-size: 5em;
+  color: #ff5a20;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  color: #000000;
+}
+
+.join-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff5a20;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.join-btn:hover {
+  background: #e04e18;
+}
+
+/* Event Section */
+.event-list {
+  padding: 40px 20px;
+  display: grid;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.event-card {
+  background: #1e1e1e;
+  border-left: 5px solid #ff5a20;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.event-card h2 {
+  color: #ff5a20;
+  margin-bottom: 10px;
+}
+
+/* Alert */
+.alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 0, 0, 0.2);
+  border: 2px solid red;
+  color: red;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #1a1a1a;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 150px;
+    padding: 10px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+}
+.event-grid {
+  background: url('/Ico/temporary.png') no-repeat center center;
+  background: fixed;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.event-card {
+  background: linear-gradient(145deg, #1a1a1a, #ff5a20);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 90, 32, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 5px solid #ff5a20;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 90, 32, 0.6);
+}
+
+.event-card h2 {
+  font-size: 1.5em;
+  color: #ff5a20;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  font-size: 1em;
+  color: #ccc;
+  margin: 5px 0;
+}
+
+.event-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff5a20;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 15px rgba(255, 90, 32, 0.3);
+  margin-top: 20px;
+}
+
+.event-btn:hover {
+  background-color: #e04e18;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(255, 90, 32, 0.5);
+}

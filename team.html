@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NepPath VTC - Team</title>
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: url('Ico/temporary.png') no-repeat center center fixed;
+      background-color: #0f0f0f;
+      color: white;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #ff5a20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: relative;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 3px;
+  cursor: pointer;
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  z-index: 999;
+  width: 18px;
+  height: 14px;
+}
+
+.menu-toggle div {
+  width: 18px;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+}
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    /* Mobile Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    z-index: 999;
+    width: 18px;
+    height: 14px;
+    flex-direction: column;
+    gap: 3px;
+    cursor: pointer;
+  }
+
+  .menu-toggle div {
+    width: 18px;
+    height: 2px;
+    background-color: white;
+    border-radius: 1px;
+  }
+
+  nav {
+    flex-direction: column;
+    background-color: #ff5a20;
+    position: fixed;
+    top: 0;
+    right: -180px; /* Smaller hidden position */
+    height: flex;
+    width: 120px;   /* Smaller width */
+    padding: 60px 15px 20px;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+
+  nav.show {
+    right: 0;
+  }
+
+  header {
+    flex-direction: row;
+  }
+}
+
+    /* TEAM SECTION */
+    .team-section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .team-member {
+  background-color: rgba(26, 26, 26, 0.6); /* semi-transparent dark */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* subtle border */
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(4px); /* optional: adds frosted glass effect */
+}
+
+    .team-member:hover {
+      transform: scale(1.05);
+      border-color: #ff5a20;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ff5a20;
+      margin-bottom: 15px;
+    }
+
+    .name {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .role-btn {
+      background-color: #ff5a20;
+      color: white;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      cursor: default;
+      margin-bottom: 10px;
+      box-shadow: 0 0 8px #ff5a2070;
+    }
+
+    .member-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .member-icons a {
+      color: white;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .member-icons a:hover {
+      color: #ff5a20;
+    }
+
+    @media screen and (max-width: 600px) {
+      .avatar {
+        width: 80px;
+        height: 80px;
+      }
+
+      .name {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="Ico\NepPath Logo circle dim.png" alt="NepPath VTC Logo">
+    </a>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <nav id="menu">
+      <a href="index.html">Home</a>
+      <a href="event.html">Event</a>
+      <a href="contactUS.html#contact">Contact Us</a>
+      <a href="join.html#Join">Join</a>
+    </nav>
+  </header>
+
+  <!-- TEAM SECTION -->
+  <section class="team-section">
+    <div class="team-grid">
+
+      <div class="team-member">
+        <img src="\Ico\NepPath Logo circle dim.png" alt="Founder" class="avatar">
+        <div class="name">Lucifer_VIP</div>
+        <button class="role-btn">Founder</button>
+        <div class="member-icons">
+          <a href="https://discord.gg/vtGzM6W7nr" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://steamcommunity.com/id/kabi75/" target="_blank"><i class="fab fa-steam"></i></a>
+          <a href="#youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="\Ico\NepPath Logo circle dim.png" alt="CEO" class="avatar">
+        <div class="name">omac_bi</div>
+        <button class="role-btn">CEO</button><br> <!-- <br> Use a new line-->
+        <button class="role-btn" onclick="window.open('https://www.youtube.com/@omac_bi', '_blank')">Official Streamer</button>
+        <div class="member-icons">
+          <a href="https://discord.gg/vtGzM6W7nr" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://steamcommunity.com/profiles/76561199803400163" target="_blank"><i class="fab fa-steam"></i></a>
+          <a href="https://www.tiktok.com/@neppath_vtc?_t=ZS-8yEHVkmTVvb&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/@omac_bi" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="\Ico\NepPath Logo circle dim.png" alt="HR-Team" class="avatar">
+        <div class="name">SAROJ 10</div>
+        <button class="role-btn">HR-Team</button>
+        <div class="member-icons">
+          <a href="https://discord.gg/vtGzM6W7nr" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://steamcommunity.com/profiles/76561199773037312" target="_blank"><i class="fab fa-steam"></i></a>
+          <a href="https://www.tiktok.com/@neppath?_t=ZS-8yEJ0gtd2Ej&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="\Ico\NepPath Logo circle dim.png" alt="Event Manager" class="avatar">
+        <div class="name">RAJA_RAJA_50</div>
+        <button class="role-btn">Event Manager</button>
+        <div class="member-icons">
+          <a href="https://discord.gg/vtGzM6W7nr" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://steamcommunity.com/profiles/76561199797575004" target="_blank"><i class="fab fa-steam"></i></a>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="\Ico\NepPath Logo circle dim.png" alt="Event Manager" class="avatar">
+        <div class="name">Aaron Exede</div>
+        <button class="role-btn">Event Manager</button>
+        <div class="member-icons">
+          <a href="https://discord.gg/vtGzM6W7nr" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://steamcommunity.com/profiles/76561199275651358" target="_blank"><i class="fab fa-steam"></i></a>
+          <a href="https://www.tiktok.com/@nepnex_moding" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/@nepnex_mods" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="\Ico\NepPath Logo circle dim.png" alt="Recruitment" class="avatar">
+        <div class="name">RUKESH YT</div>
+        <button class="role-btn">Recruitment</button>
+        <div class="member-icons">
+          <a href="https://discord.gg/vtGzM6W7nr" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://steamcommunity.com/profiles/76561199817173105" target="_blank"><i class="fab fa-steam"></i></a>
+          <a href="https://www.tiktok.com/@rukesh.yt" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/@rukeshyt10" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="\Ico\NepPath Logo circle dim.png" alt="Streamer" class="avatar">
+        <div class="name">SHUBHAMGUPTA</div>
+        <button class="role-btn">Streamer</button>
+        <div class="member-icons">
+          <a href="https://discord.gg/vtGzM6W7nr" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://steamcommunity.com/profiles/76561199523422738" target="_blank"><i class="fab fa-steam"></i></a>
+          <a href="https://www.youtube.com/@CrazyGamingHoraa" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.tiktok.com/@crazygaminghoraa" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="\Ico\NepPath Logo circle dim.png" alt="Driver" class="avatar">
+        <div class="name">Pikandip</div>
+        <button class="role-btn">Driver</button>
+        <div class="member-icons">
+          <a href="https://discord.gg/vtGzM6W7nr" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://steamcommunity.com/profiles/76561198990595759" target="_blank"><i class="fab fa-steam"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

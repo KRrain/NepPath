@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - NepPath VTC</title>
+  <link rel="stylesheet" href="css/contactUS.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("aFuQpbbTxM16DSiQr"); // Replace with your EmailJS public key
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Ico/NepPath Logo circle dim.png" alt="VTC Logo">
+      </a>
+    </div>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="event.html">Event</a>
+      <a href="team.html">Team</a>
+      <a href="join.html">Join</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <form id="contactForm" class="join-form">
+        <div class="form-group">
+          <input type="text" name="from_name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email_id" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group full">
+          <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+        </div>
+        <div class="form-group full">
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
+      <div id="contactAlert" class="alert">✅ Message sent successfully!</div>
+    </div>
+  </section>
+
+  <script src="js/contact.js"></script>
+</body>
+</html>

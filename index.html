@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NepPath VTC</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="Ico\NepPath Logo circle dim.png" alt="VTC Logo">
+    </div>
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="event.html">Event</a>
+      <a href="team.html#team">Team</a>
+      <a href="contactUS.html">Contact Us</a>
+      <a href="join.html">Join</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to NepPath VTC</h1>
+      <p>Drive. Connect. Conquer.</p>
+      <button class="join-btn">Join Now</button>
+    </div>
+  </section>
+
+  <!-- Signin Popup -->
+  <div class="popup" id="signinPopup">
+    <span class="close" onclick="closeSignin()">×</span>
+    <h2>Admin Sign In</h2>
+    <input type="password" id="passwordInput" placeholder="Enter Password">
+    <button onclick="submitLogin()">Login</button>
+  </div>
+
+  <!-- Alert -->
+  <div id="alertBox" class="alert"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

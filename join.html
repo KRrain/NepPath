@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join NepPath VTC</title>
+  <link rel="stylesheet" href="css/join.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="\Ico\NepPath Logo circle dim.png" alt="VTC Logo">
+      </a>
+    </div>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="event.html">Event</a>
+      <a href="team.html">Team</a>
+      <a href="contactUS.html">Contact Us</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Join NepPath VTC</h1>
+      <form id="joinForm" class="join-form">
+  <div class="form-group">
+    <input type="text" name="full_name" placeholder="Full Name" required>
+  </div>
+  <div class="form-group">
+    <input type="text" name="discord_id" placeholder="Discord ID (e.g., yourname#1234)" required>
+  </div>
+  <div class="form-group">
+    <input type="text" name="tmp_id" placeholder="TruckersMP ID" required>
+  </div>
+  <div class="form-group">
+    <select name="division" required>
+      <option value="">Select Division</option>
+      <option value="ETS2">ETS2</option>
+      <option value="ATS">ATS</option>
+    </select>
+  </div>
+  <div class="form-group full">
+    <textarea name="message" placeholder="Why do you want to join?" rows="4" required></textarea>
+  </div>
+  <div class="form-group full">
+    <button type="submit">Submit Application</button>
+  </div>
+</form>
+
+  <div id="alertBox" class="alert">✅ Application submitted! We will contact you soon.</div>
+
+  <script src="script.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("YKQ-XA7D55lvUMzvF"); // Replace with your actual EmailJS public key
+  })();
+</script>
+<script src="js/join.js"></script>
+</body>
+</html>

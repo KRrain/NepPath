@@ -1,0 +1,142 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff5a20;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 40px 20px;
+  background: url('/Ico/temporary.png') no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.hero-content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff5a20;
+}
+
+/* Form */
+.join-form .form-group {
+  margin-bottom: 15px;
+}
+
+.join-form input,
+.join-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+}
+
+.join-form button {
+  width: 100%;
+  padding: 12px;
+  background: #ff5a20;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.join-form button:hover {
+  background: #e14e17;
+}
+
+/* Alert */
+.alert {
+  display: none;
+  margin-top: 20px;
+  padding: 12px;
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+  color: #28a745;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    border-radius: 8px;
+  }
+
+  nav a {
+    margin: 10px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
