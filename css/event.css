@@ -1,22 +1,13 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
 }
-body {
-  background: url('temporary.png') no-repeat center center fixed;
-  background-size: cover;
-  background-color: #0f0f0f;
-  font-family: 'Segoe UI', sans-serif;
-  color: white;
-  font-size: 16px;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 40;
 }
 
 header {
@@ -68,7 +59,7 @@ nav a:hover {
   background-size: cover;
   background-position: center;
   text-align: center;
-  padding: 100px 20px;
+  padding: 0px;
 }
 
 .hero-content h1 {
@@ -156,15 +147,16 @@ nav a:hover {
   }
 }
 .event-grid {
-  background: url('/Ico/temporary.png') no-repeat center center;
-  background: fixed;
+  background: rgba(0, 0, 0, 0.5); /* ✅ This gives a semi-transparent background */
+  background: transparent; /* ✅ This makes it float over the body background */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   padding: 40px 20px;
-  max-width: 1100px;
+  
   margin: auto;
 }
+
 
 .event-card {
   background: linear-gradient(145deg, #1a1a1a, #ff5a20);
