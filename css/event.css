@@ -11,7 +11,7 @@ html, body {
   font-family: 'Segoe UI', sans-serif;
 }
 body {
-  background: url('Ico/temporary.png') no-repeat center center fixed;
+  background: url('temporary.png') no-repeat center center fixed;
   background-size: cover;
   background-color: #0f0f0f;
   font-family: 'Segoe UI', sans-serif;
