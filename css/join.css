@@ -61,6 +61,9 @@ nav a:hover {
 .hero-section {
   min-height: 100vh;
   background: url('Ico/temporary.png') no-repeat center center/cover;
+  background:fixed;
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;

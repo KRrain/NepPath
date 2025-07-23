@@ -50,6 +50,9 @@ nav a {
 /* Contact Section */
 .contact-section {
   padding: 40px 20px;
+  background:fixed;
+  background-size: cover;
+  background-position: center;
   background: url('Ico/temporary.png') no-repeat center;
   background-size: cover;
   min-height: 100vh;
