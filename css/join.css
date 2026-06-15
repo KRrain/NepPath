@@ -1,189 +1,135 @@
-* 
-html, body {
-      height: 100%;
-     }
-{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body {
-  background: linear-gradient(135deg, #1a1a1a, #2b0000);
-  color: #fff;
-  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: #050505;
+  color: #f0f0f0;
+  margin: 0;
 }
 
 header {
+  background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(15px);
+  padding: 15px 5%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #ff5a20;
-  position: sticky;
+  align-items: center;
+  position: fixed;
+  width: 93%;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+.logo img { height: 50px; }
+nav { display: flex; gap: 20px; }
+nav a { color: white; margin-left: 0; text-decoration: none; transition: 0.3s; position: relative; font-weight: 500; }
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ff5a20;
+  transition: width 0.3s;
+}
+nav a:hover { color: #ff5a20; }
+nav a:hover::after { width: 100%; }
 
-.logo img {
-  height: 60px;
-}
-
-nav {
-  display: flex;
-  gap: 15px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-nav a:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-}
+/* Hamburger Menu */
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger div { width: 25px; height: 3px; background: white; transition: 0.3s; }
 
 .hero-section {
   min-height: 100vh;
-  background: url('NepPath.jpg') no-repeat center center/cover;
-  background:fixed;
-  background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 20px;
+  padding: 40px 20px;
+  background: url('../NepPath.jpg') no-repeat center center/cover;
 }
 
 .hero-content {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #ff5a20;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
+  animation: zoomIn 0.5s ease-out;
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
 .join-form {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  width: 100%;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea,
-.form-group button {
-  width: 100%;
+.form-group { display: flex; flex-direction: column; }
+.form-group.full { grid-column: span 2; }
+
+input, select, textarea {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 12px;
-  border: none;
   border-radius: 8px;
-  background-color: #2c2c2c;
   color: white;
-  font-size: 1rem;
-}
-
-.form-group.full {
-  grid-column: span 2;
-}
-
-.form-group button {
-  background-color: #ff5a20;
-  cursor: pointer;
+  font-family: inherit;
   transition: 0.3s;
 }
 
-.form-group button:hover {
-  background-color: #e04d1b;
+input:focus, select:focus, textarea:focus {
+  border-color: #ff5a20;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 90, 32, 0.2);
+  outline: none;
 }
 
-.alert {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 90, 32, 0.2);
-  border: 1px solid #ff5a20;
-  color: #ff5a20;
-  padding: 16px 24px;
+button {
+  background: linear-gradient(135deg, #ff5a20, #d93d0a);
+  color: white;
+  border: none;
+  padding: 15px;
   border-radius: 8px;
-  display: none;
-  z-index: 999;
-  backdrop-filter: blur(4px);
-  font-size: 1.1rem;
-  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(255, 90, 32, 0.3);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 90, 32, 0.5);
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @media (max-width: 768px) {
+  .hamburger { display: flex; }
+  header { justify-content: space-between; }
   nav {
-    display: none;
+    position: fixed;
+    right: -100%;
+    top: 80px;
     flex-direction: column;
-    background-color: #ff5a20;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    padding: 10px;
-    border-radius: 8px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    width: 200px;
+    padding: 20px;
+    transition: 0.3s;
+    border-radius: 0 0 0 10px;
   }
-
-  nav.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .join-form {
-    grid-template-columns: 1fr;
-  }
-
-  .form-group.full {
-    grid-column: span 1;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-section {
-    padding: 100px 40px;
-  }
-
-  .hero-content h1 {
-    font-size: 3rem;
-  }
-
-  .form-group button {
-    font-size: 1.1rem;
-    padding: 14px 30px;
-  }
+  nav.show { right: 0; }
 }

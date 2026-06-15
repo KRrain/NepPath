@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NepPath VTC - Events</title>
   <link rel="stylesheet" href="css/event.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     body {
          background: url('NepPath.jpg') no-repeat center center fixed;
@@ -42,52 +45,52 @@
     </div>
   </section>
 
-  <section class="event-grid">
-    <div class="event-card">
-      <h2>July Convoy</h2>
-      <p><strong>🗓 Date:</strong> July 27, 2025</p>
-      <p><strong>🛣 Route:</strong> Paris → Berlin</p>
-      <p><strong>⏰ Time:</strong> 19:00 UTC</p>
-      <a href="event.html" class="event-btn">Visit Event Page</a>
-    </div>
-    <div class="event-card">
-      <h2>August Special Meetup</h2>
-      <p><strong>🗓 Date:</strong> August 15, 2025</p>
-      <p><strong>🛣 Route:</strong> Innsbruck → Milan</p>
-      <p><strong>⏰ Time:</strong> 18:00 UTC</p>
-      <a href="event.html" class="event-btn">Visit Event Page</a>
-    </div>
-    <div class="event-card">
-      <h2>Nepali National Convoy</h2>
-      <p><strong>🗓 Date:</strong> September 5, 2025</p>
-      <p><strong>🛣 Route:</strong> Calais → Salzburg</p>
-      <p><strong>⏰ Time:</strong> 20:30 UTC</p>
-      <a href="event.html" class="event-btn">Visit Event Page</a>
-    </div>
-        <div class="event-card">
-      <h2>Nobember Special Meetup</h2>
-      <p><strong>🗓 Date:</strong> August 15, 2025</p>
-      <p><strong>🛣 Route:</strong> Innsbruck → Milan</p>
-      <p><strong>⏰ Time:</strong> 18:00 UTC</p>
-      <a href="event.html" class="event-btn">Visit Event Page</a>
-    </div>
-    <div class="event-card">
-      <h2>Nobember Special Meetup</h2>
-      <p><strong>🗓 Date:</strong> August 15, 2025</p>
-      <p><strong>🛣 Route:</strong> Innsbruck → Milan</p>
-      <p><strong>⏰ Time:</strong> 18:00 UTC</p>
-      <a href="event.html" class="event-btn">Visit Event Page</a>
-    </div>
-    <div class="event-card">
-      <h2>Nobember Special Meetup</h2>
-      <p><strong>🗓 Date:</strong> August 15, 2025</p>
-      <p><strong>🛣 Route:</strong> Innsbruck → Milan</p>
-      <p><strong>⏰ Time:</strong> 18:00 UTC</p>
-      <a href="event.html" class="event-btn">Visit Event Page</a>
-    </div>
+  <section class="event-grid" id="eventsContainer">
+    <p style="text-align:center; width:100%;">Loading Events...</p>
   </section>
 
   <div id="alertBox" class="alert"></div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCHALD_GGX-KTx0edaJeLZTezQWD5bARk4",
+      authDomain: "neppath-1415f.firebaseapp.com",
+      projectId: "neppath-1415f",
+      storageBucket: "neppath-1415f.firebasestorage.app",
+      messagingSenderId: "934979565356",
+      appId: "1:934979565356:web:d6cfb97398c323a5101e89",
+      measurementId: "G-22PMW3P48D"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const container = document.getElementById('eventsContainer');
+
+    // Real-time listener for events
+    db.collection("events").orderBy("date", "asc").onSnapshot((snapshot) => {
+      container.innerHTML = ""; // Clear loading text
+      snapshot.forEach((doc) => {
+        const event = doc.data();
+        const card = `
+          <div class="event-card">
+            <h2>${event.title}</h2>
+            <p><strong>🗓 Date:</strong> ${event.date}</p>
+            <p><strong>🛣 Route:</strong> ${event.route}</p>
+            <p><strong>⏰ Time:</strong> ${event.time} UTC</p>
+            <a href="#" class="event-btn">View Details</a>
+          </div>
+        `;
+        container.innerHTML += card;
+      });
+      if(snapshot.empty) {
+        container.innerHTML = "<p style='text-align:center; width:100%;'>No upcoming events found.</p>";
+      }
+    });
+  </script>
   <script src="js/event.js"></script>
 </body>
 </html>

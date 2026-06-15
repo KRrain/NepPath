@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel - NepPath VTC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../Ico/NepPath Logo circle dim.png" alt="VTC Logo">
+      </a>
+    </div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../event.html">Event</a>
+      <a href="../team.html#team">Team</a>
+      <a href="../contactUS.html">Contact Us</a>
+      <a href="../join.html">Join</a>
+      <button id="logoutBtn" style="display: none;" class="logout-btn">Logout</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    
+    <!-- LOGIN FORM -->
+    <div id="loginSection" class="form-card">
+      <h2><i class="fas fa-lock"></i> Admin Login</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="email" id="adminEmail" placeholder="Email Address" required>
+        </div>
+        <div class="input-group">
+          <input type="password" id="adminPassword" placeholder="Password" required>
+        </div>
+        <button type="submit" class="action-btn">Login</button>
+        <p id="loginError" class="error-msg"></p>
+      </form>
+    </div>
+
+    <!-- DASHBOARD (Hidden by default) -->
+    <div id="dashboardSection" class="dashboard" style="display: none;">
+      <h1>Admin Dashboard</h1>
+      
+      <div class="form-card">
+        <h3><i class="fas fa-calendar-plus"></i> Add New Event</h3>
+        <form id="addEventForm">
+          <div class="input-group">
+            <label>Event Title</label>
+            <input type="text" id="eventTitle" placeholder="e.g. July Convoy" required>
+          </div>
+          <div class="input-group">
+            <label>Date</label>
+            <input type="date" id="eventDate" required>
+          </div>
+          <div class="input-group">
+            <label>Route</label>
+            <input type="text" id="eventRoute" placeholder="e.g. Paris -> Berlin" required>
+          </div>
+          <div class="input-group">
+            <label>Time (UTC)</label>
+            <input type="time" id="eventTime" required>
+          </div>
+          <button type="submit" class="action-btn">Add Event</button>
+        </form>
+      </div>
+
+      <div class="form-card" style="margin-top: 30px;">
+        <h3><i class="fas fa-users"></i> Add Team Member</h3>
+        <form id="addMemberForm">
+          <div class="input-group">
+            <label>Name</label>
+            <input type="text" id="memberName" placeholder="Username" required>
+          </div>
+          <div class="input-group">
+            <label>Role</label>
+            <input type="text" id="memberRole" placeholder="e.g. Founder, Driver" required>
+          </div>
+          <div class="input-group">
+            <label>Avatar URL (Optional)</label>
+            <input type="text" id="memberAvatar" placeholder="Image Link">
+          </div>
+          <div class="input-group">
+            <label>TruckersMP ID (Optional)</label>
+            <input type="text" id="memberTmpId" placeholder="123456">
+          </div>
+          <button type="submit" class="action-btn">Add Member</button>
+        </form>
+      </div>
+
+      <div class="form-card" style="margin-top: 30px;">
+        <h3><i class="fas fa-user-shield"></i> Create New Admin</h3>
+        <form id="createAdminForm">
+          <div class="input-group">
+            <input type="email" id="newAdminEmail" placeholder="New Admin Email" required>
+          </div>
+          <div class="input-group">
+            <input type="password" id="newAdminPassword" placeholder="New Admin Password" required>
+          </div>
+          <button type="submit" class="action-btn">Create Admin</button>
+        </form>
+      </div>
+
+      <div id="statusMessage" class="status-msg"></div>
+    </div>
+
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
